@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.pyo
+
+plugins/hfsy-api/scripts/outputs/
+plugins/hfsy-api/scripts/outputs-test/
+
+.env
+*.zip

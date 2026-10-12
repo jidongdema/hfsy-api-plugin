@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "hfsy-api": {
+      "command": "python",
+      "args": ["-u", "./scripts/mcp_server.py"],
+      "cwd": ".",
+      "tool_timeout_sec": 4800
+    }
+  }
+}

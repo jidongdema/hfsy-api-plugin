@@ -1,0 +1,144 @@
+{
+  "data": {
+    "models": {
+      "sd-2.5-480": {
+        "category": "video",
+        "curlExample": "curl -X POST 'https://www.hfsyapi.cn/v1/video/create' \\\n-H 'Authorization: Bearer sk-your-api-key' \\\n-H 'Content-Type: application/json' \\\n-d '{\n    \"model\": \"sd-2.5-480\",\n    \"orientation\": \"portrait\",\n    \"prompt\": \"@image1 小猫钓鱼，视频参考 @video1，背景音乐参考 @audio1\",\n    \"images\": [\"图片URLl\"],\n    \"videos\": [\"视频URLl\"],\n    \"audios\": [\"音频URL1\"],\n    \"duration\": 5,\n    \"size\": \"large\",\n    \"watermark\": false,\n}'",
+        "description": "此模型支持最长生成30s，分辨率480P，目前最强大的视频模型，按秒计费，30图片+10视频+10音频",
+        "displayName": "sd-2.5-480",
+        "enabled": true,
+        "endpoint": "/v1/video/create",
+        "errorTips": [
+          "提示词上限 10000 字",
+          "素材上限 30 图片 + 10 视频 + 10 音频",
+          "时⻓必须在 4 - 30 秒区间"
+        ],
+        "name": "sd-2.5-480",
+        "order": 60,
+        "queryResponse": "{\n  \"data\": {\n    \"id\": \"xxxxx\",\n    \"detail\": xxxxx,\n    \"status\": \"completed\",\n    \"result_url\": \"视频url\",\n    \"status_update_time\": 1790231870,\n    \"fail_reason\": \"失败原因xxxxx\"\n  },\n  \"success\": true\n}",
+        "requestParams": [
+          {
+            "description": "取值 sd-2.5-480",
+            "name": "model",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "横竖屏固定枚举值，landscape（16:9横屏)、portrait（9:16竖屏）",
+            "name": "orientation",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "视频比例，可选值：9:16、3:4、1:1、4:3、16:9，不传时根据 orientation 自动推导",
+            "name": "ratio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "≤ 10000 字，如有上传素材，必须@引用（参考@image1、@video1、@audio1）",
+            "name": "prompt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": " 生成视频时长，可选 4 - 30 秒整数",
+            "name": "duration",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "图⽚URL数组，数量 ≤ 30 张，总大小 ≤ 30 MB，建议单张图片大小 ≤ 20 MB（支持格式：JPG、PNG、WebP、GIF）",
+            "name": "images",
+            "required": false,
+            "type": "array"
+          },
+          {
+            "description": "视频URL数组，数量 ≤ 10 条，单视频分辨率 720 px - 2160 px，时长 3 - 10 秒，大小 ≤ 200 MB，总时长 ≤15 秒（支持格式：MP4、MOV）",
+            "name": "videos",
+            "required": false,
+            "type": "array"
+          },
+          {
+            "description": "音频URL数组，数量 ≤ 10 条，大小 ≤ 15 MB，时长 3 - 10 秒，总时长 ≤ 15 秒（支持mp3、wav、m4a、aac、ogg、webm等常见音频格式）",
+            "name": "audios",
+            "required": false,
+            "type": "array"
+          }
+        ],
+        "returnValue": "{\n  \"id\": \"xxxxx\",\n  \"status\": \"IN_PROGRESS\",\n  \"status_update_time\": 1789948800\n}",
+        "statusQueryPathEndpoint": "/v1/video/query/{id}",
+        "statusQueryPathExample": "curl -X POST 'https://www.hfsyapi.cn/v1/video/query/{id}' \\\n-H 'Authorization: Bearer sk-your-api-key' \\\n"
+      },
+      "sd-2-vip-480": {
+        "category": "video",
+        "curlExample": "curl -X POST 'https://www.hfsyapi.cn/v1/video/create' \\\n-H 'Authorization: Bearer sk-your-api-key' \\\n-H 'Content-Type: application/json' \\\n-d '{\n    \"model\": \"sd-2-vip-480\",\n    \"orientation\": \"portrait\",\n    \"prompt\": \"@image1 小猫钓鱼，视频参考 @video1，背景音乐参考 @audio1\",\n    \"images\": [\"图片URLl\"],\n    \"videos\": [\"视频URLl\"],\n    \"audios\": [\"音频URL1\"],\n    \"duration\": 5,\n    \"size\": \"large\",\n    \"watermark\": false,\n}'",
+        "description": "满血2.0，480P , 9图片+3视频+3音频，480P，4s～15s。支持图像、视频、音频多种模态作为参考输入生成视频，可高精度还原物品细节、材质、音色、视效风格、运镜等，角色特征亦可稳定保持，赋予创作者如同导演般的掌控权。该模型特别适合短视频创作、广告宣传、动画制作、教育科普等多种场景，能生成流畅自然、细节丰富的视频作品。VIP版本提供专属加速通道，生成速度提升50%，画质达到4K级别，是内容创作者和企业用户的理想选择。",
+        "displayName": "sd-2-vip-480",
+        "enabled": true,
+        "endpoint": "/v1/video/create",
+        "errorTips": [
+          "提示词上限 10000 字",
+          "素材上限 9 图片 + 3 视频 + 3 音频（如果上传了视频，必须上传至少 1 张图片）",
+          "时⻓必须在 5 - 15 秒区间"
+        ],
+        "name": "sd-2-vip-480",
+        "order": 60,
+        "queryResponse": "{\n  \"data\": {\n    \"id\": \"xxxxx\",\n    \"detail\": xxxxx,\n    \"status\": \"completed\",\n    \"result_url\": \"视频url\",\n    \"status_update_time\": 1790231870,\n    \"fail_reason\": \"失败原因xxxxx\"\n  },\n  \"success\": true\n}",
+        "requestParams": [
+          {
+            "description": "取值 sd-2-vip-480",
+            "name": "model",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "横竖屏固定枚举值，landscape（16:9横屏)、portrait（9:16竖屏）",
+            "name": "orientation",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "视频比例，可选值：9:16、3:4、1:1、4:3、16:9、21:9，不传时根据 orientation 自动推导",
+            "name": "ratio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "≤ 10000 字，如有上传素材，必须@引用（参考@image1、@video1、@audio1）",
+            "name": "prompt",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": " 生成视频时长，可选 5 - 15 秒整数",
+            "name": "duration",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "图⽚URL数组，数量 ≤ 9 张，总大小 ≤ 30 MB，建议单张图片大小 ≤ 20 MB（支持格式：JPG、PNG、WebP、GIF）",
+            "name": "images",
+            "required": false,
+            "type": "array"
+          },
+          {
+            "description": "视频URL数组，数量 ≤ 3 条，单视频分辨率 720 px - 2160 px，时长 3 - 10 秒，大小 ≤ 200 MB，总时长 ≤15 秒（支持格式：MP4、MOV）",
+            "name": "videos",
+            "required": false,
+            "type": "array"
+          },
+          {
+            "description": "音频URL数组，数量 ≤ 3 条，大小 ≤ 15 MB，时长 3 - 10 秒，总时长 ≤ 15 秒（支持mp3、wav、m4a、aac、ogg、webm等常见音频格式）",
+            "name": "audios",
+            "required": false,
+            "type": "array"
+          }
+        ],
+        "returnValue": "{\n  \"id\": \"xxxxx\",\n  \"status\": \"IN_PROGRESS\",\n  \"status_update_time\": 1789948800\n}",
+        "statusQueryPathEndpoint": "/v1/video/query/{id}",
+        "statusQueryPathExample": "curl -X POST 'https://www.hfsyapi.cn/v1/video/query/{id}' \\\n-H 'Authorization: Bearer sk-your-api-key' \\\n"
+      }
+    }
+  }
+}

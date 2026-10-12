@@ -1,0 +1,20 @@
+{
+  "name": "hfsy-local",
+  "interface": {
+    "displayName": "HFSY API Plugins"
+  },
+  "plugins": [
+    {
+      "name": "hfsy-api",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hfsy-api"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

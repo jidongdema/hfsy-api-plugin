@@ -1,0 +1,27 @@
+{
+  "name": "hfsy-api",
+  "version": "0.1.3",
+  "description": "Call HFSY text, image, and video models directly from a Codex conversation.",
+  "author": {
+    "name": "HFSY API"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "HFSY API",
+    "shortDescription": "Use HFSY models from Codex conversations.",
+    "longDescription": "Initialize with @https://www.hfsyapi.cn/ and an API key, then call available text, image, and video models with live model configuration validation.",
+    "developerName": "HFSY API",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Generate media"
+    ],
+    "websiteURL": "https://www.hfsyapi.cn/",
+    "defaultPrompt": [
+      "@https://www.hfsyapi.cn/ \u521d\u59cb\u5316 HFSY API",
+      "\u7528 nano-banana-pro \u751f\u6210\u4e00\u5f20\u56fe\u7247",
+      "\u7528 minimax-h3 \u751f\u6210\u4e00\u4e2a 5 \u79d2\u7ad6\u5c4f\u89c6\u9891"
+    ]
+  }
+}
